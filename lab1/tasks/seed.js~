@@ -1,0 +1,24 @@
+const dbConnection = require("../config/mongoConnection");
+const data = require("../data/");
+const recipes = data.recipes;
+
+dbConnection().then(db => {
+    return db.dropDatabase().then(() => {
+        return dbConnection;
+    }).then((db) => {
+	let myR = 
+	{
+		"title": "my title",
+		"ingredients": [{none: none}],
+		"steps": ["step1", "step2"],
+		"comments": []
+	    
+	};
+        return recipes.addRecipe(myR.title, myR.ingredients, myR.steps, myR.comments);
+    }).then(() => {
+        console.log("Done seeding database");
+        db.close();
+    });
+}, (error) => {
+    console.error(error);
+});

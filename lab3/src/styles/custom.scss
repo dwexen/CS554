@@ -1,0 +1,41 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    background: $body-background;
+    color: $brand-primary;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: $primary-font-size;
+}
+
+.container-fluid {
+	float: left;
+	width: 75%;
+}
+
+.navigation {
+	float: left;
+	width: 25%
+}
+
+ @media (max-width: 768px) {
+ 	.navigation {
+ 		margin: auto;
+ 		vertical-align: center;
+ 		width: 100%;
+ 		float: none;
+ 	}
+ 	.container-fluid {
+ 		width: 100%;
+ 	}
+
+ 	
+ }
+
+ .card {
+ 	background: green;
+ 	padding: 2px;
+ }
